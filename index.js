@@ -3,7 +3,7 @@ const cors = require("cors")
 const fileUpload = require("express-fileupload")
 require('dotenv').config()
 const app = express()
-const { config } = require("./Config/mongooseConfig")
+const { config } = require("./config/mongooseConfig")
 
 config()
 
