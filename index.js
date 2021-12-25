@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(cors())
 app.use(fileUpload({
     useTempFiles : true,
-    tempFileDir : "/temp/"
+    tempFileDir : `${__dirname}`+`/temp/`
 }))
 
 const adminRoute = require("./routes/adminRoute")

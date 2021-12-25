@@ -4,6 +4,8 @@ const User = require("../models/userModel")
 const { generateToken } = require("../utils/generateToken")
 const cloudinary = require('cloudinary').v2
 
+const appPrefix = 'temp';
+
 cloudinary.config({
     cloud_name : process.env.NAME,
     api_key : process.env.KEY,
@@ -50,9 +52,12 @@ exports.vendorSignin = asyncHandler(async(req,res)=>{
 
 //used to create products
 exports.createProduct = asyncHandler(async(req,res)=>{
+
     try {
+        
         const { name , description , price } = req.body        
         if(name && description && price && req.files){
+
 
             const cloud = await cloudinary.uploader.upload(req.files.photos.tempFilePath,{
                 folder : "Products"
