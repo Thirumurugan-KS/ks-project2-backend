@@ -5,9 +5,9 @@ const { generateToken } = require("../utils/generateToken")
 const cloudinary = require('cloudinary').v2
 
 cloudinary.config({
-    cloud_name : 'dirl9qdbz',
-    api_key : '366751568763697',
-    api_secret : '0Tzbzs-pqoH3jlAelvnwNEl7eRg'
+    cloud_name : process.env.NAME,
+    api_key : process.env.KEY,
+    api_secret : process.env.SECRET
 })
 
 //used to sigin as vendor
