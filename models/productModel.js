@@ -24,7 +24,8 @@ const productSchema = mongoose.Schema({
     approvedby : {
         type : mongoose.Schema.ObjectId,
         ref : 'user'
-    }
+    },
+    district : String
 },{
     timestamps : true
 })

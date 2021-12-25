@@ -68,6 +68,9 @@ exports.createProduct = asyncHandler(async(req,res)=>{
             }
             req.body.image = image
             req.body.createdby = req.user._id
+
+            //added
+            req.body.district = req.user.district
             const product = await Product.create(req.body)
             res.json(product)
         }
